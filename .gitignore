@@ -12,3 +12,6 @@ __pycache__/
 
 # Ignore the data folder entirely
 data/
+
+# ignore Jupyter Notebook checkpoints and outputs
+.ipynb_checkpoints
