@@ -71,10 +71,9 @@ def clean_edgar_data(df):
     return df
 
 
-def load_edgar_data(directory='../data/raw/', sheet_name=3, skiprows=9):
+def load_edgar_data(directory='../data/raw/', sheet_name=3, skiprows=9, countries=None):
     """
-    Loads Excel files, skipping metadata rows.
-    skiprows=9: Skips the first 9 rows, making the 10th row the header.
+    Loads Excel files, skips metadata, and filters by specific country codes.
     """
     search_path = os.path.join(directory, "*.xlsx")
     files = glob.glob(search_path)
@@ -83,8 +82,14 @@ def load_edgar_data(directory='../data/raw/', sheet_name=3, skiprows=9):
         print(f"DEBUG: No Excel files found in {os.path.abspath(directory)}")
         return None
     
-    # Pass the skiprows parameter to read_excel
-    return pd.read_excel(files[0], sheet_name=sheet_name, skiprows=skiprows)
+    df = pd.read_excel(files[0], sheet_name=sheet_name, skiprows=skiprows)
+    
+    # Standardize column name if necessary (common EDGAR issue)
+    # Check if a common country column exists, usually 'Country_code_A3'
+    if 'Country_code_A3' in df.columns and countries is not None:
+        df = df[df['Country_code_A3'].isin(countries)]
+        
+    return df
 
 
 
@@ -95,5 +100,5 @@ def load_all_climate_data(wb_indicators, wb_countries, oecd_url, edgar_dir):
     return {
         'wb': load_wdi(wb_indicators, wb_countries),
         'oecd': load_oecd_data(oecd_url, selected_oecd_policies),
-        'edgar': load_edgar_data(directory=edgar_dir)
+        'edgar': load_edgar_data(directory=edgar_dir, countries=wb_countries)
     }
