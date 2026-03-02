@@ -9,3 +9,6 @@ __pycache__/
 # Ignore IDE files
 .vscode/
 .DS_Store
+
+# Ignore the data folder entirely
+data/
