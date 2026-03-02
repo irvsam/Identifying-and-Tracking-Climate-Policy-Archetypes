@@ -70,10 +70,9 @@ def clean_edgar_data(df):
         df['sector_name'] = df['sector'].map(EDGAR_SECTOR_MAP)
     return df
 
-
-def load_edgar_data(directory='../data/raw/', sheet_name=3, skiprows=9, countries=None):
+def load_edgar_data(directory='../data/raw/', sheet_name=3, skiprows=9, countries=None, start_year=2015, end_year=2025):
     """
-    Loads Excel files, skips metadata, and filters by specific country codes.
+    Loads Excel files, skips metadata, and filters by specific country codes and year columns.
     """
     search_path = os.path.join(directory, "*.xlsx")
     files = glob.glob(search_path)
@@ -82,14 +81,21 @@ def load_edgar_data(directory='../data/raw/', sheet_name=3, skiprows=9, countrie
         print(f"DEBUG: No Excel files found in {os.path.abspath(directory)}")
         return None
     
+    # Load raw data
     df = pd.read_excel(files[0], sheet_name=sheet_name, skiprows=skiprows)
     
-    # Standardize column name if necessary (common EDGAR issue)
-    # Check if a common country column exists, usually 'Country_code_A3'
-    if 'Country_code_A3' in df.columns and countries is not None:
+    # 1. Filter by country
+    if countries is not None and 'Country_code_A3' in df.columns:
         df = df[df['Country_code_A3'].isin(countries)]
-        
-    return df
+    
+    # 2. Subset to only keep the year columns we want
+    desired_years = [f'Y_{y}' for y in range(start_year, end_year + 1)]
+    
+    # Keep non-year columns (ID columns) plus our target year columns
+    id_cols = [c for c in df.columns if not str(c).startswith('Y_')]
+    available_years = [c for c in df.columns if c in desired_years]
+    
+    return df[id_cols + available_years]
 
 
 
