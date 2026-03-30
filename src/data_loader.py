@@ -5,7 +5,7 @@ import glob
 from io import StringIO
 import os
 
-# Data loading functions for World Bank, OECD, and EDGAR datasets.
+# Data loading functions 
 
 #=========================================      World Bank Data    =========================================
 
@@ -34,12 +34,12 @@ selected_oecd_policies = [
     'LEV4_BAN_COAL_STAT', # Ban on the construction of coal power plants - legal status
 ]
 
-def load_oecd_data(url, policy_list):
+def load_oecd_data(url, policy_list=selected_oecd_policies):
     """Fetches OECD data and immediately filters for selected policies."""
     response = requests.get(url)
     df = pd.read_csv(StringIO(response.text))
     
-    # Filter the DataFrame to only include your selected policy IDs
+    # Filter the DataFrame to only include selected policy IDs
     filtered_df = df[df['CLIM_ACT_POL'].isin(policy_list)]
     return filtered_df
 
@@ -84,11 +84,11 @@ def load_edgar_data(directory='../data/raw/', sheet_name=3, skiprows=9, countrie
     # Load raw data
     df = pd.read_excel(files[0], sheet_name=sheet_name, skiprows=skiprows)
     
-    # 1. Filter by country
+    # Filter by country
     if countries is not None and 'Country_code_A3' in df.columns:
         df = df[df['Country_code_A3'].isin(countries)]
     
-    # 2. Subset to only keep the year columns we want
+    # Subset to only keep the year columns we want
     desired_years = [f'Y_{y}' for y in range(start_year, end_year + 1)]
     
     # Keep non-year columns (ID columns) plus our target year columns
