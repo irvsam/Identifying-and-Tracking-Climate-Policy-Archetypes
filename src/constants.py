@@ -1,6 +1,6 @@
-countries = ['ARG', 'AUS', 'BRA', 'CAN', 'CHN', 'FRA', 'DEU', 'IND', 
+countries = ['ARG', 'AUS', 'CAN', 'CHN', 'FRA', 'DEU', 'IND', 
              'IDN', 'ITA', 'JPN', 'MEX', 'RUS', 'SAU', 'ZAF', 'KOR', 
-             'TUR', 'GBR', 'USA']
+             'TUR', 'GBR' ]
 
 years = list(range(2015, 2023))
 

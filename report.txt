@@ -1,0 +1,12 @@
+Day 01: 
+    check the date i started but i first spent quite a bit of time looking at the datasets and compiling them
+
+Day 02: 30 March
+    I then had quite a bit of a break and came back to this project but in the meantime I had been working 
+    on another project with these datasets so I know a lot more about them. I recompiled them into a 
+    dataset that I can work with.
+    I had a small python project where I trained a model to classify policies based on whether they are mitigation or adaptation
+
+Day 03: 31 March
+    Now I am beginning to really look at the dataset I compiled and try and make it scaled and workable.
+    Currently the data is in country year pairs which needs to be addressed.
