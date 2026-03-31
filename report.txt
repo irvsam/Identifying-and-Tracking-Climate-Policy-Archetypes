@@ -10,3 +10,8 @@ Day 02: 30 March
 Day 03: 31 March
     Now I am beginning to really look at the dataset I compiled and try and make it scaled and workable.
     Currently the data is in country year pairs which needs to be addressed.
+
+    averaged the years so we have one line per country
+    scaling the data using fit transform and scalar = powertransformer
+    seems like a k of 3 or 4 makes sense
+    
