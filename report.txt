@@ -15,3 +15,7 @@ Day 03: 31 March
     scaling the data using fit transform and scalar = powertransformer
     seems like a k of 3 or 4 makes sense
     
+    added more countries and I'm not sure if this is good or bad? kind of nice to focus on a small list and get a good story rather? will have to decide.
+    used PCA - not sure if visualisation is useful
+    Kmeans seems to be working well... the clusters are making sense. Would be cool to do some feature engineering now and see what we get. I think DBSCAN might not work for this data but worth testing.
+    Think I need to do some dimensionality reduction.
