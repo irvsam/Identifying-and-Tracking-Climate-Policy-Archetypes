@@ -2,7 +2,7 @@ countries = ['ARG', 'AUS', 'CAN', 'CHN', 'FRA', 'DEU', 'IND',
              'IDN', 'ITA', 'JPN', 'MEX', 'RUS', 'SAU', 'ZAF', 'KOR', 
              'TUR', 'GBR' ]
 
-years = list(range(2015, 2023))
+years = list(range(2015, 2021))
 
 selected_oecd_policies = [
     'LEV4_CARBONTAX_T',  # Carbon Tax Transport
@@ -20,3 +20,15 @@ selected_oecd_policies = [
     'LEV4_BAN_EXTRAC_DATE', # Bans on Fossil Fuel Extraction (with date)
     'LEV4_BAN_COAL_STAT', # Ban on the construction of coal power plants - legal status
 ]
+
+
+wb_indicators = {
+    'EG.USE.PCAP.KG.OE': 'energy_use_per_capita',
+    'NY.GDP.MKTP.KD': 'gdp_constant_usd',
+    'EG.ELC.RNWX.ZS': 'renewable_electricity_pct',
+    'NY.GDP.PCAP.KD': 'gdp_per_capita_constant',
+    'EG.FEC.RNEW.ZS': 'renewable_final_energy_pct',
+    'EG.ELC.COAL.ZS': 'coal_electricity_pct' ,
+    'EN.ATM.CO2E.PP.GD': 'co2_emissions_per_gdp',
+
+}
