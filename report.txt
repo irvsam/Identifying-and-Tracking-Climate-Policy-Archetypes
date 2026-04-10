@@ -1,5 +1,5 @@
 Day 01: 
-    check the date i started but i first spent quite a bit of time looking at the datasets and compiling them
+    Need to check the date i started but i first spent quite a bit of time looking at the datasets and compiling them
 
 Day 02: 30 March
     I then had quite a bit of a break and came back to this project but in the meantime I had been working 
@@ -19,3 +19,26 @@ Day 03: 31 March
     used PCA - not sure if visualisation is useful
     Kmeans seems to be working well... the clusters are making sense. Would be cool to do some feature engineering now and see what we get. I think DBSCAN might not work for this data but worth testing.
     Think I need to do some dimensionality reduction.
+    initial clusters I got where:
+
+    --- Climate Policy Archetypes (k=4) ---
+
+Archetype 0:
+  Countries: Canada, Denmark, Finland, France, Ireland, Norway, New Zealand, Sweden
+
+Archetype 1:
+  Countries: Austria, Belgium, Switzerland, Chile, Germany, Spain, United Kingdom, Greece, Hungary, Italy, Netherlands, Portugal, Slovakia
+
+Archetype 2:
+  Countries: Australia, Czech Republic, Israel, Japan, Korea, Republic of, Poland, Russian Federation, Saudi Arabia
+
+Archetype 3:
+  Countries: Argentina, China, Colombia, Indonesia, India, Mexico, Peru, Turkey, South Africa
+
+
+  Day 04: 02 April
+  today im taking a look at my features to see what could do with some tweaking
+
+
+  Day 05: 10 April
+  
