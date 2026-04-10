@@ -1,13 +1,13 @@
-Day 01: 
+# Day 01: 
     Need to check the date i started but i first spent quite a bit of time looking at the datasets and compiling them
 
-Day 02: 30 March
+# Day 02: 30 March
     I then had quite a bit of a break and came back to this project but in the meantime I had been working 
     on another project with these datasets so I know a lot more about them. I recompiled them into a 
     dataset that I can work with.
     I had a small python project where I trained a model to classify policies based on whether they are mitigation or adaptation
 
-Day 03: 31 March
+# Day 03: 31 March
     Now I am beginning to really look at the dataset I compiled and try and make it scaled and workable.
     Currently the data is in country year pairs which needs to be addressed.
 
@@ -36,11 +36,11 @@ Archetype 3:
   Countries: Argentina, China, Colombia, Indonesia, India, Mexico, Peru, Turkey, South Africa
 
 
-  Day 04: 02 April
+  # Day 04: 02 April
   today im taking a look at my features to see what could do with some tweaking
 
 
-  Day 05: 10 April
+  # Day 05: 10 April
   A bit of transformation decisions: 
    1. moving from standard scale to log scale for values: energy use per capita and gdp per capita. This is because the absolute values could be quite misleading so it
    is better to think of it in scaled form so a relative change in a smaller value is compared with a relative change in a high value and high values don't just trump the lower values
@@ -71,7 +71,44 @@ Archetype 3:
   Countries: Argentina, China, Colombia, Indonesia, India, Mexico, Peru, Turkey, South Africa
 
   still haven't quite figured out which scalar to use. need to automate the process of scaling and performing kmeans so that i can test it out with different things. doing that now.
+  with the new data the k=2 seems to be the best choice
+
+  but for comparison im using k=4 
+
+using standard scalar:
+
+  --- Climate Policy Archetypes (k=4) ---
+
+Archetype 0:
+  Countries: Australia, China, Czech Republic, Greece, Hungary, Israel, Japan, Korea, Republic of, Poland, Russian Federation, Saudi Arabia, Turkey
+
+Archetype 1:
+  Countries: Austria, Belgium, Switzerland, Chile, Germany, Spain, Italy, Netherlands, Portugal, Slovakia
+
+Archetype 2:
+  Countries: Canada, Denmark, Finland, France, United Kingdom, Ireland, Norway, New Zealand, Sweden
+
+Archetype 3:
+  Countries: Argentina, Colombia, Indonesia, India, Mexico, Peru, South Africa
+
+seems to not have changed so much interesting that the UK moved 
+
+and using powertransformer:
 
 
+--- Climate Policy Archetypes (k=4) ---
+
+Archetype 0:
+  Countries: Canada, Denmark, Finland, France, United Kingdom, Ireland, Norway, New Zealand, Sweden
+
+Archetype 1:
+  Countries: Australia, China, Czech Republic, Hungary, Israel, Japan, Korea, Republic of, Poland, Russian Federation, Saudi Arabia
+
+Archetype 2:
+  Countries: Argentina, Colombia, Indonesia, India, Mexico, Peru, Turkey, South Africa
+
+Archetype 3:
+  Countries: Austria, Belgium, Switzerland, Chile, Germany, Spain, Greece, Italy, Netherlands, Portugal, Slovakia
 
 
+  
