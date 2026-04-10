@@ -51,3 +51,27 @@ Archetype 3:
 
    4. handling the negatives in some percentage values using df[col] = df[col].clip(lower=0) which just made any negative values equal 0
    (TODO: I need to look into why there were negatives in the first place)
+
+
+   THE K MEANS METHOD:
+   now im re doing the k means method with my new data so lets see if something different shows. the previous outputs were as follows
+
+   --- Climate Policy Archetypes (k=4) ---
+
+Archetype 0:
+  Countries: Canada, Denmark, Finland, France, Ireland, Norway, New Zealand, Sweden
+
+Archetype 1:
+  Countries: Austria, Belgium, Switzerland, Chile, Germany, Spain, United Kingdom, Greece, Hungary, Italy, Netherlands, Portugal, Slovakia
+
+Archetype 2:
+  Countries: Australia, Czech Republic, Israel, Japan, Korea, Republic of, Poland, Russian Federation, Saudi Arabia
+
+Archetype 3:
+  Countries: Argentina, China, Colombia, Indonesia, India, Mexico, Peru, Turkey, South Africa
+
+  still haven't quite figured out which scalar to use. need to automate the process of scaling and performing kmeans so that i can test it out with different things. doing that now.
+
+
+
+
