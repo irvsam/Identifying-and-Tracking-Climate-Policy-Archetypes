@@ -41,4 +41,13 @@ Archetype 3:
 
 
   Day 05: 10 April
-  
+  A bit of transformation decisions: 
+   1. moving from standard scale to log scale for values: energy use per capita and gdp per capita. This is because the absolute values could be quite misleading so it
+   is better to think of it in scaled form so a relative change in a smaller value is compared with a relative change in a high value and high values don't just trump the lower values
+
+   2. dropping correlated columns which in this case was only one of them
+
+   3. dropped gdp constant completely and just kept the logged version of gdp per capita
+
+   4. handling the negatives in some percentage values using df[col] = df[col].clip(lower=0) which just made any negative values equal 0
+   (TODO: I need to look into why there were negatives in the first place)
