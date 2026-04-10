@@ -111,4 +111,4 @@ Archetype 3:
   Countries: Austria, Belgium, Switzerland, Chile, Germany, Spain, Greece, Italy, Netherlands, Portugal, Slovakia
 
 
-  
+  if I run pca for visualisation it shows one big cloud without obvious clusters... I will try out hierarchical clustering
