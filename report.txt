@@ -128,3 +128,12 @@ The log-transform was NB. Without it, the "Giants" in Cluster 4 would have compl
 
 added a visualisation of these clusters which is quite a nice visual... now I want to start looking at how these change when I change my variables
 
+
+Really interesting when you remove economic indicators!
+
+- China is now functionally identical to Germany and the Netherlands.
+
+- Chile and Mexico joined nordic countries
+
+- Australia and Japan are closer to India and Poland they are to their 'G7' peers.
+
