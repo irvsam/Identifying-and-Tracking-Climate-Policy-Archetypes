@@ -112,3 +112,19 @@ Archetype 3:
 
 
   if I run pca for visualisation it shows one big cloud without obvious clusters... I will try out hierarchical clustering
+
+
+  HIERARCHICAL clustering
+Cluster 1: ['AUT', 'BEL', 'DEU', 'ESP', 'GBR', 'GRC', 'ITA', 'NLD', 'PRT']
+Cluster 2: ['CAN', 'CHE', 'DNK', 'FIN', 'FRA', 'IRL', 'NOR', 'NZL', 'SWE']
+Cluster 3: ['ARG', 'CHL', 'COL', 'MEX', 'PER', 'ZAF']
+Cluster 4: ['AUS', 'CHN', 'CZE', 'HUN', 'IDN', 'IND', 'ISR', 'JPN', 'KOR', 'POL', 'RUS', 'SAU', 'SVK', 'TUR']
+
+
+** interesting: Even though Cluster 3 has the lowest GDP and the highest climate risk (ND-GAIN), they are actually leaning harder into Carbon Taxes than the massive Industrial Giants. 
+
+Note for later: 
+The log-transform was NB. Without it, the "Giants" in Cluster 4 would have completely skewed the distances
+
+added a visualisation of these clusters which is quite a nice visual... now I want to start looking at how these change when I change my variables
+
