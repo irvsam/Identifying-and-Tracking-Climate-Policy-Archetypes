@@ -1,5 +1,5 @@
-# Day 01: 
-    Need to check the date i started but i first spent quite a bit of time looking at the datasets and compiling them
+# Day 01: March 02
+    i first spent quite a bit of time looking at the datasets and compiling them
 
 # Day 02: 30 March
     I then had quite a bit of a break and came back to this project but in the meantime I had been working 
@@ -136,4 +136,11 @@ Really interesting when you remove economic indicators!
 - Chile and Mexico joined nordic countries
 
 - Australia and Japan are closer to India and Poland they are to their 'G7' peers.
+
+
+Day 06: 11 April
+
+Today I think I would like to play around with autoencoders
+some thinking about this... I'm using them just to do some tests and dimensionality reduction. I can't rely on autoencoders
+for the type of thing im doing because i have too little data and risk overfitting.
 
