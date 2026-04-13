@@ -144,3 +144,9 @@ Today I think I would like to play around with autoencoders
 some thinking about this... I'm using them just to do some tests and dimensionality reduction. I can't rely on autoencoders
 for the type of thing im doing because i have too little data and risk overfitting.
 
+The autoencoder provided a great way to visualise in 3d
+
+Day 07: 13 April
+
+I was using mlpregressor to automate an autoencoder now i need to shift to using an actual autoencoder. the problem was just that my current venv is on the newest python
+that was for tensor... using pytorch
