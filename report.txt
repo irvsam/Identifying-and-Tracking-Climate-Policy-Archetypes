@@ -150,3 +150,17 @@ Day 07: 13 April
 
 I was using mlpregressor to automate an autoencoder now i need to shift to using an actual autoencoder. the problem was just that my current venv is on the newest python
 that was for tensor... using pytorch
+
+initial visualisation seems to be grouping the countries in a strange way... will have to work on this
+
+had to make a copy of scaled df and used this with tensor..
+initial run: Used PowerTransformer (Yeo-Johnson)
+
+great loss improvement:
+Epoch [50/200], Loss: 0.4712
+Epoch [100/200], Loss: 0.3640
+Epoch [150/200], Loss: 0.2239
+Epoch [200/200], Loss: 0.1606
+
+although this is most likely hugely over fitted?
+
