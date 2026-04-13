@@ -164,3 +164,22 @@ Epoch [200/200], Loss: 0.1606
 
 although this is most likely hugely over fitted?
 
+using autoencoder and kmeans:
+
+--- Climate Archetype Assignments ---
+Archetype 0:
+  Countries: CAN, CHL, FIN, FRA, IRL, NOR, PRT, SWE
+
+Archetype 1:
+  Countries: ARG, COL, IDN, IND, ISR, JPN, MEX, PER, POL, RUS, SAU, TUR, ZAF
+
+Archetype 2:
+  Countries: CHE, DNK, NZL
+
+Archetype 3:
+  Countries: AUS, AUT, BEL, CHN, CZE, DEU, ESP, GBR, GRC, HUN, ITA, KOR, NLD, SVK
+
+
+  Now: need to figure out if it's learnt anything or is simply overfitting because we have so few data points...
+
+  
