@@ -182,4 +182,88 @@ Archetype 3:
 
   Now: need to figure out if it's learnt anything or is simply overfitting because we have so few data points...
 
+  Day 08: 14 April
+
+  Up until now I've got the data in a usable place, I've played around a bit with some clustering now I want to really get into it
+  and start comparing the methods I have used up til now with some new methods that could come up with new and interesting clusters.
+
+  I've been using notebooks for experimenting but it might be nice to have a script that runs through all the different methods I want to look at and compares results. for now 
+  I want to do this manually so I have full control over what is happening and cal also learn along the way.
+
+  comparing the different scalers:
+
+  ae output with power:
+  --- Climate Archetype Assignments ---
+Archetype 0:
+  Countries: CAN, CHL, FIN, FRA, IRL, NOR, PRT, SWE
+
+Archetype 1:
+  Countries: ARG, COL, IDN, IND, ISR, JPN, MEX, PER, POL, RUS, SAU, TUR, ZAF
+
+Archetype 2:
+  Countries: CHE, DNK, NZL
+
+Archetype 3:
+  Countries: AUS, AUT, BEL, CHN, CZE, DEU, ESP, GBR, GRC, HUN, ITA, KOR, NLD, SVK
+
+  ae output with standard:
+
+  --- Climate Archetype Assignments ---
+Archetype 0:
+  Countries: AUS, BEL, CHE, CHL, GRC, HUN, JPN, KOR, SVK
+
+Archetype 1:
+  Countries: ARG, CHN, COL, CZE, ISR, MEX, PER, POL, RUS, SAU, TUR, ZAF
+
+Archetype 2:
+  Countries: IDN, IND
+
+Archetype 3:
+  Countries: AUT, CAN, DEU, DNK, ESP, FIN, FRA, GBR, IRL, ITA, NLD, NOR, NZL, PRT, SWE
+
+
+  OPINION: the standard scalar output is much worse? the visualisation is majorly squashed on the policy path. so the policies are having less of an impact?
+
+I just ran with power again and got this output:
+
+  --- Climate Archetype Assignments ---
+Archetype 0:
+  Countries: ARG, CHL, COL, IDN, IND, JPN, MEX, PER, ZAF
+
+Archetype 1:
+  Countries: CAN, CHE, DEU, FIN, FRA, GBR, IRL, NOR, PRT, SWE
+
+Archetype 2:
+  Countries: AUS, AUT, BEL, CHN, CZE, ESP, GRC, HUN, ISR, ITA, KOR, NLD, POL, RUS, SAU, SVK, TUR
+
+Archetype 3:
+  Countries: DNK, NZL
+
+  so the clusters are changing every time I run it I guess.
+
+  now I ran it and got:
+  --- Climate Archetype Assignments ---
+Archetype 0:
+  Countries: CAN, CHE, DNK, FIN, FRA, NOR, NZL, SWE
+
+Archetype 1:
+  Countries: ARG, COL, IDN, IND, MEX, PER, POL, TUR, ZAF
+
+Archetype 2:
+  Countries: AUS, AUT, BEL, CHL, CHN, CZE, DEU, ESP, GBR, GRC, HUN, IRL, ITA, JPN, KOR, NLD, PRT, SVK
+
+Archetype 3:
+  Countries: ISR, RUS, SAU
+
+  So I think what I need to do is see how often they are changing. this could mean they are just randomly being placed each time right? hmmm
+
+  Is this the case with kmeans without autoencoding it? maybe need to do simple pca.. also need to actually figure out how my data looks, is there a linear relationship or no
+
+
+  when I just run kmeans multiple times the clusters remain the same. also the difference between standard and power is not huge. just need to think about which one is best for my data.
+
+
+  okay so I'm beginning to understand this: because every time im training im starting with random weights and also the kmeans is using random centers so of course its going to be different every time.
+  actually may be a good sign tbh.
+
   
