@@ -266,4 +266,5 @@ Archetype 3:
   okay so I'm beginning to understand this: because every time im training im starting with random weights and also the kmeans is using random centers so of course its going to be different every time.
   actually may be a good sign tbh.
 
-  
+  I added a block before training the model to make sure every time it uses the same random value and then a trust score for kmeans to make sure it stays the same every run.
+  it now stays the same every run but i dont like the values its chose. need to find the optimum.
