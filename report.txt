@@ -268,3 +268,13 @@ Archetype 3:
 
   I added a block before training the model to make sure every time it uses the same random value and then a trust score for kmeans to make sure it stays the same every run.
   it now stays the same every run but i dont like the values its chose. need to find the optimum.
+
+  slowly improving.
+  the values change when i change the seed value though so not so stable. buut the underlying pattern seems to remain.
+  DNK and NZL are very often grouped together.
+
+
+  **Note: Kind of interesting idea to imagine the main promises these countries are making. who's making the biggest promises... what groups are there in terms of promises? maybe nice to use the NDCs but also a whole added layer of complexity.
+  also interesting to see whos made biggest changes recently. also added complexity
+  
+
