@@ -276,5 +276,31 @@ Archetype 3:
 
   **Note: Kind of interesting idea to imagine the main promises these countries are making. who's making the biggest promises... what groups are there in terms of promises? maybe nice to use the NDCs but also a whole added layer of complexity.
   also interesting to see whos made biggest changes recently. also added complexity
-  
 
+
+Day 09: 16 April
+I tried running DBSCAN on my latent space representation from the autoencoder... not the best result. one cluster haha but 3 outliers which are DNK SWE AND NZ which tells me quite a bit. by visualising the distances we see than DNK and NZL are way above SWE even
+
+initially tried DBSCAN with 0.5 eps but that was no good. then visualised it with a k distance elbow plot and saw that the only meaningful change happens around 5/6 
+
+Now I'm going to try out hierarchical clustering on the latent space.
+
+
+
+I want to create a script now that basically runs the model with different values and sees how often countries are grouuped together. then i can know how sure I can be about my clusters
+hierarchical comparison
+
+without ae:
+Policy-Only Cluster 1: ['ARG', 'AUS', 'COL', 'CZE', 'IDN', 'IND', 'ISR', 'JPN', 'KOR', 'PER', 'POL', 'RUS', 'SAU', 'TUR', 'ZAF']
+Policy-Only Cluster 2: ['AUT', 'BEL', 'CHE', 'CHN', 'DEU', 'ESP', 'GBR', 'GRC', 'HUN', 'ITA', 'NLD', 'PRT', 'SVK']
+Policy-Only Cluster 3: ['DNK', 'NZL']
+Policy-Only Cluster 4: ['CAN', 'CHL', 'FIN', 'FRA', 'IRL', 'MEX', 'NOR', 'SWE']
+
+with ae:
+
+--- Clusters at Cut Line (Distance = 16) ---
+Cluster 1: ['ARG', 'CHL', 'COL', 'IDN', 'IND', 'MEX', 'PER', 'ZAF']
+Cluster 4: ['AUS', 'AUT', 'BEL', 'CHN', 'DEU', 'ESP', 'GBR', 'GRC', 'HUN', 'ITA', 'JPN', 'NLD', 'PRT', 'SVK', 'TUR']
+Cluster 5: ['CAN', 'CHE', 'FIN', 'FRA', 'IRL', 'NOR', 'SWE']
+Cluster 2: ['CZE', 'ISR', 'KOR', 'POL', 'RUS', 'SAU']
+Cluster 3: ['DNK', 'NZL']
