@@ -285,8 +285,6 @@ initially tried DBSCAN with 0.5 eps but that was no good. then visualised it wit
 
 Now I'm going to try out hierarchical clustering on the latent space.
 
-
-
 I want to create a script now that basically runs the model with different values and sees how often countries are grouuped together. then i can know how sure I can be about my clusters
 hierarchical comparison
 
@@ -304,3 +302,18 @@ Cluster 4: ['AUS', 'AUT', 'BEL', 'CHN', 'DEU', 'ESP', 'GBR', 'GRC', 'HUN', 'ITA'
 Cluster 5: ['CAN', 'CHE', 'FIN', 'FRA', 'IRL', 'NOR', 'SWE']
 Cluster 2: ['CZE', 'ISR', 'KOR', 'POL', 'RUS', 'SAU']
 Cluster 3: ['DNK', 'NZL']
+
+
+Day 10: 20 April
+
+I'm just reconning today. looking back at preprocessing my data I think it seems that powertransformer is definitely a good idea for my case because when i visualised the
+data using:
+
+# Simple visualisation of distibution of og set
+
+df_averaged.hist(figsize=(12, 10))
+plt.tight_layout()
+plt.show()
+
+there were some very skew looking graphs. so better idea to use powertransformer to normalise.
+

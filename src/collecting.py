@@ -15,7 +15,6 @@ project_root = os.path.abspath(os.path.join(current_dir, '..'))
 if project_root not in sys.path:
     sys.path.insert(0, project_root)
 
-# NOW you can import
 from src.constants import countries, years, wb_indicators, selected_oecd_policies
 from src.data_loader import load_oecd_data
 

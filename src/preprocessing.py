@@ -8,7 +8,7 @@ def preprocess_dataset(input_path, output_path, method='standard'):
     df = pd.read_csv(input_path)
     
     # Drop non numerical
-    # For most of the datasets im using it will just be these two: assume 'country_code' and 'Name' are the non-numeric labels
+    # For most of the datasets im using it will just be these two: 'country_code' and 'Name' are the non-numeric labels
     X = df.drop(columns=['country_code', 'Name'])
     
     # Choose transformation method
