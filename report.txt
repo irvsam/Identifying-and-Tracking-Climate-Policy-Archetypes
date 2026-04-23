@@ -317,3 +317,67 @@ plt.show()
 
 there were some very skew looking graphs. so better idea to use powertransformer to normalise.
 
+Day 11: 22 April
+
+PROGRESS UPDATE
+--------------------------------------------------------------------------------------------------------------------------
+
+1. Data Engineering & Preprocessing
+
+Temporal Aggregation: Consolidated country-year pairs into a single-row-per-country "averaged" snapshot to simplify data for the start
+
+Transformation Strategy: Moved from StandardScaler to PowerTransformer (Yeo-Johnson) because the data was quite skewed
+
+Implemented Log-Scaling for GDP and Energy Use per capita to capture relative differences
+
+Feature Pruning: Removed highly correlated features to prevent multicollinearity from biasing the clusters. also played around with what the clusters look like if we remove any economic indicators
+
+2. Modeling & Iteration
+
+K-Means & Hierarchical Clustering: Played around with archetypes that form using kmeans, also did autoencoder and then kmeans. also tested hierarchical clustering. found
+that the clusters do change but they are pretty consistent at a level. Problem is I have nothing to bench mark against.
+
+Finding: Removing economic indicators shifted the clusters quite significantly
+
+Dimensionality Reduction (PCA vs. Autoencoders):Used PCA for initial visualization but found "one big cloud."Implemented a PyTorch Autoencoder to learn a "Latent Space" (3D representation).
+
+The Overfitting Challenge: Acknowledged the risk of overfitting due to the small sample size. 
+
+Addressed this by implementing fixed seeds and "trust scores" to check for cluster stability across runs.
+
+3. Current Archetypes Emerging
+
+"Golden Standard" (DNK, NZL, SWE): Consistently isolated as leaders, appearing as outliers in DBSCAN.
+
+"Innovators" (CHL, MEX, COL): Interestingly grouped with Nordic countries when economic data is removed—showing they have "advanced" portfolios despite lower GDP.
+
+"Industry Heavy" (CHN, IND, POL, AUS): Grouped by heavy industry dependencies and specific implementation-focused policies.
+
+"Laggards" (RUS, SAU, ISR): Grouped by a sparse policy framework regardless of wealth.
+
+4. Current Challenges & Next Steps
+
+Cluster Stability: Investigating why Autoencoder + K-Means yields different results per run.  Also tested this by including some made up countries that I expected to land in a certain place... often correct.
+
+Solution: Implementing consistency checks and centroid analysis.
+
+DBSCAN Limitations: Noted that density-based clustering is struggling with the current density of the latent space (resulting in one giant cluster).
+
+Future Scope: Considering the inclusion of NDCs (Nationally Determined Contributions) and "Rate of Change" metrics to see who is accelerating their climate action vs. who is stagnant.
+
+Current Experimenting: testing how they change with the inclusion of different variables.
+
+Future: think I should look into which variables are currently dominating
+
+
+5. Thoughts:
+
+Is it more valuable to cluster countries as they are (Economy + Policy) or by their intent (Policy only)?
+
+Would it make sense to keep K-Means on raw data as a form of control to account for the possibility of ae overfitting?
+
+Variable Choice: I've currently been including a random selection of policies that I chose thinking they cover a fair deal of policy groups but of course this could be a 
+bad group I have no way of knowing.
+
+
+Day 12: 23 April
