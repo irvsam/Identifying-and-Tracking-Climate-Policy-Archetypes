@@ -381,3 +381,14 @@ bad group I have no way of knowing.
 
 
 Day 12: 23 April
+
+I'm now moving on to more data becauase previously has just been an experiment with a small dataset. 
+i am now collecting all data from the year 2000 for each country so i have country year pairs for each row and i will 
+be tracking their evolution...
+
+i had to change some NA values to 0 for the oecd capmf but this is fine because NA means they didnt have any data on that so it is safe to say the policy did not exist
+it might be wrong but it is better than ignoring that column.
+
+
+
+

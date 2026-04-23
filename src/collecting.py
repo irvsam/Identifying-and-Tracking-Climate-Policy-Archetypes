@@ -101,8 +101,6 @@ class ClimateDataFactory:
 
         final_avg = merged
 
-
-
         # Save output
         os.makedirs('data/processed', exist_ok=True)
         final_avg.to_csv('data/processed/final_feature_matrix.csv', index=False)
