@@ -6,7 +6,7 @@ countries = [
     'SVK', 'SVN', 'SWE', 'TUR', 'USA', 'ZAF', 'CHE', 'NLD', 'SGP', 'VNM'
 ]
 
-years = list(range(2015, 2021))
+years = list(range(2000, 2021))
 
 selected_oecd_policies = [
     'LEV4_CARBONTAX_T',  # Carbon Tax Transport
