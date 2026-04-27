@@ -395,3 +395,4 @@ it might be wrong but it is better than ignoring that column.
 Day 13: Investigating the negative values
 
 why are there negative values in the dataset???
+realised the negatives only  come up when i did the averaging so it must have been a problem with my formula?
