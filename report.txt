@@ -392,3 +392,6 @@ it might be wrong but it is better than ignoring that column.
 
 
 
+Day 13: Investigating the negative values
+
+why are there negative values in the dataset???
