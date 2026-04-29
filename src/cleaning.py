@@ -7,10 +7,10 @@ def clean_and_engineer(input_path):
     df = pd.read_csv(input_path)
     
     # Handle Negatives 
-    # Don't need to do this unless averaging the values because that was causing the negatives... need to work out why
-    # pct_cols = ['renewable_electricity_pct', 'renewable_final_energy_pct', 'coal_electricity_pct']
-    # for col in pct_cols:
-    #     df[col] = df[col].clip(lower=0)
+   
+    pct_cols = ['renewable_electricity_pct', 'renewable_final_energy_pct', 'coal_electricity_pct']
+    for col in pct_cols:
+        df[col] = df[col].clip(lower=0)
 
 
     # Log-transform skewed data
