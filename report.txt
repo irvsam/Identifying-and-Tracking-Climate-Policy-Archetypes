@@ -399,3 +399,6 @@ realised the negatives only  come up when i did the averaging so it must have be
 this wasn't true, the negatives were always there
 
 Day 14: 29 April
+
+I loooked into the original dataset and can see those values are in fact negative in the dataset. which is very weird.
+
