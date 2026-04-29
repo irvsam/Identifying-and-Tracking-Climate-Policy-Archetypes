@@ -400,5 +400,6 @@ this wasn't true, the negatives were always there
 
 Day 14: 29 April
 
-I loooked into the original dataset and can see those values are in fact negative in the dataset. which is very weird.
-
+I looked into the original dataset and can see those values are in fact negative in the dataset. which is very weird.
+I also brought back USA and BRA who I had removed because of a lot of missing data but they are important. not sure if this is the right move. now I need to jst 
+do some serious stabilioty testing and visualise what I have.

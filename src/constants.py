@@ -33,6 +33,8 @@ wb_indicators = {
     'NY.GDP.PCAP.KD': 'gdp_per_capita_constant',
     'EG.FEC.RNEW.ZS': 'renewable_final_energy_pct',
     'EG.ELC.COAL.ZS': 'coal_electricity_pct' ,
-    'EN.ATM.CO2E.PP.GD': 'co2_emissions_per_gdp',
+    'EN.GHG.CO2.PC.CE.AR5': 'co2_emissions_per_capita',
+    'EN.GHG.ALL.PC.CE.AR5': 'ghg_emissions_per_capita'
+
 
 }

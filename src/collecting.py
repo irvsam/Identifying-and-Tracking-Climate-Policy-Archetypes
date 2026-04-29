@@ -2,6 +2,7 @@ import pandas as pd
 import wbgapi as wb
 import os
 import sys
+import numpy as np
 
 
 
@@ -40,6 +41,8 @@ class ClimateDataFactory:
         
         # Transform from WB format to Long format
         df_melted = df.melt(id_vars=['economy', 'series'], var_name='year', value_name='value')
+        # Strip any hidden characters or casing issues
+        df_melted['series'] = df_melted['series'].str.strip()
         df_melted['series'] = df_melted['series'].map(self.wb_indicators)
         df_final = df_melted.pivot_table(index=['economy', 'year'], columns='series', values='value').reset_index()
         df_final['year'] = df_final['year'].str.replace('YR', '').astype(int)
@@ -75,38 +78,39 @@ class ClimateDataFactory:
         df_wb = self.fetch_world_bank()
         df_oecd = self.fetch_oecd_policy()
 
-        # 2. Merge
+        # 2. Merge (The "Long" Version)
         print("Merging datasets...")
         merged = pd.merge(df_gain, df_wb, on=['country_code', 'year'], how='outer')
         merged = pd.merge(merged, df_oecd, on=['country_code', 'year'], how='outer')
         
-        # 3. Clean
-        merged = merged[merged['year'] <= 2021] # Standardize cutoff
-       
-        
-        # 4. Collapse (Temporal Averaging)
-        # num_cols = merged.select_dtypes(include=['number']).columns.tolist()
-        # if 'year' in num_cols: num_cols.remove('year')
-       #  final_avg = merged.groupby(['country_code', 'Name'])[num_cols].mean().reset_index()
-
-        # Drop columns where every value is exactly the same (no information for clustering)
-        # final_avg = merged.loc[:, (final_avg != final_avg.iloc[0]).any()]
-
-        # Remove any countries with missing data in the final set (since we can't cluster them)
-        # final_avg = merged.dropna()
-        # Drop columns that have any missing values 
-        # Select only columns that start with 'LEV' (your policy data)
+        # 3. Clean & Fill
+        merged = merged[merged['year'] <= 2021]
         policy_cols = [col for col in merged.columns if col.startswith('LEV')]
-        # Fill those specific columns with 0
         merged[policy_cols] = merged[policy_cols].fillna(0)
 
-        final_avg = merged
+        # 4. Create the "Snapshot" (Temporal Averaging)
+        print("Creating averaged snapshot...")
+        # We only average numeric columns, keeping country identifiers
+        numeric_cols = merged.select_dtypes(include=[np.number]).columns.tolist()
+        if 'year' in numeric_cols: numeric_cols.remove('year')
+        
+        # Group by country and Name to get the "Archetype" values
+        df_averaged = merged.groupby(['country_code', 'Name'])[numeric_cols].mean().reset_index()
 
-        # Save output
+        # 5. Save both
         os.makedirs('data/processed', exist_ok=True)
-        final_avg.to_csv('data/processed/final_feature_matrix.csv', index=False)
-        print(f"Pipeline Complete! Generated matrix for {len(final_avg)} country - years.")
-        return final_avg
+        
+        # Version A: Temporal trajectories
+        merged.to_csv('data/processed/climate_trajectories_long.csv', index=False)
+        
+        # Version B: Averaged 
+        df_averaged.to_csv('data/processed/climate_archetypes_avg.csv', index=False)
+        
+        print(f"Pipeline Complete!")
+        print(f"Trajectories: {merged.shape}")
+        print(f"Archetypes: {df_averaged.shape}")
+        
+        return merged, df_averaged
 
 if __name__ == "__main__":
     factory = ClimateDataFactory()
