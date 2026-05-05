@@ -31,6 +31,8 @@ def preprocess_for_ml(df, method='standard', type = 'temporal'):
         identifiers = df[['country_code', 'Name', 'year']]
         features = df.drop(columns=['country_code', 'Name', 'year'])
         
+
+        # Scaled data
         if method == 'power':
             transformer = PowerTransformer(method='yeo-johnson')
             X_scaled = transformer.fit_transform(features)

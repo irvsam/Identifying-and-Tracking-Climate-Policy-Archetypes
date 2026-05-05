@@ -369,7 +369,6 @@ Current Experimenting: testing how they change with the inclusion of different v
 
 Future: think I should look into which variables are currently dominating
 
-
 5. Thoughts:
 
 Is it more valuable to cluster countries as they are (Economy + Policy) or by their intent (Policy only)?
@@ -390,8 +389,6 @@ i had to change some NA values to 0 for the oecd capmf but this is fine because 
 it might be wrong but it is better than ignoring that column.
 
 
-
-
 Day 13: Investigating the negative values
 
 why are there negative values in the dataset???
@@ -403,3 +400,15 @@ Day 14: 29 April
 I looked into the original dataset and can see those values are in fact negative in the dataset. which is very weird.
 I also brought back USA and BRA who I had removed because of a lot of missing data but they are important. not sure if this is the right move. now I need to jst 
 do some serious stabilioty testing and visualise what I have.
+
+
+I've now made my collecting and cleaning methods to create both datasets: temporal and averaged so I can go on to test both sets with my different methods.
+
+Day 15: May 04
+
+info about report: The report should contain detailed information about tour reasoning behind using the techniques (not necessarily a description of how the techniques work. Meaning: you don't need to spell out the K-Means algorithm and the Math behind it. 
+However, we are interested in why you think K-Means was an appropriate approach in your scenario). We are interested in the code, but you can link to your GitHub Profile (it shouldn't be inline in the report). Here, consider using LaTeX (or even Markdown 
+if that suffices), as you can version it together with your other source code. In the end we need a PDF, and that PDF should then contain a link to your GitHub profile. If you don't want to use Git, you can also hand in the code in a ZIP file or similar
+
+
+Ive been using the temporal data to visualise shifts in countries and see when countries made major shifts. quite interesting to see what years they made major shifts. tomorrow is a new day i will look into some stability testing on my clusters.
