@@ -412,3 +412,11 @@ if that suffices), as you can version it together with your other source code. I
 
 
 Ive been using the temporal data to visualise shifts in countries and see when countries made major shifts. quite interesting to see what years they made major shifts. tomorrow is a new day i will look into some stability testing on my clusters.
+
+Day 16: May 05
+
+today is about consolidation. I have a bunch of different notebooks that I used for experiments with my data. I have now correlated
+two different datasets to work with and some of the notebooks still use the old datasets so i need to compile them into one consolidated notebooks
+that uses the right datasets and allows me to conduct experiments to compare etc etc
+
+Now have a really nice consolidated notebook to conduct my tests
