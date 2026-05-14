@@ -27,7 +27,8 @@ def load_oecd_data(url, policy_list=selected_oecd_policies):
     df = pd.read_csv(StringIO(response.text))
     
     # Filter the DataFrame to only include selected policy IDs
-    filtered_df = df[df['CLIM_ACT_POL'].isin(policy_list)]
+    filtered_df = df[df['CLIM_ACT_POL'].isin(policy_list.keys())]
+    filtered_df['CLIM_ACT_POL'] = filtered_df['CLIM_ACT_POL'].map(policy_list)
     return filtered_df
 
 

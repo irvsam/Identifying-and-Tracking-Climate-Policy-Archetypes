@@ -17,8 +17,8 @@ def clean_and_engineer(input_path):
     df['log_energy_pc'] = np.log1p(df['energy_use_per_capita'])
 
     # Feature Selection
-    # Dropping raw economic values and the redundant NZ_DATE
-    to_drop = ['gdp_constant_usd', 'gdp_per_capita_constant', 'energy_use_per_capita', 'LEV4_NZ_DATE']
+    # Dropping raw economic values and redundant dates
+    to_drop = ['gdp_constant_usd', 'gdp_per_capita_constant', 'energy_use_per_capita']
     df_clean = df.drop(columns=to_drop)
     
     return df_clean

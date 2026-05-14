@@ -8,22 +8,32 @@ countries = [
 
 years = list(range(2000, 2021))
 
-selected_oecd_policies = [
-    'LEV4_CARBONTAX_T',  # Carbon Tax Transport
-    'LEV3_BAN_PHOUT_COAL', # Coal phase-out
-    'LEV4_EE_MANDATE',   # Energy Efficiency Mandates
-    'LEV4_ETS_E_GHG',   # Emissions Trading System (Energy)
-    'LEV4_NZ_DATE' , # Net Zero Target Year
-    'LEV4_CONG_CHARGE', # Congestion Charge
-    'LEV3_NZ', # Net Zero Target
-    'LEV2_CROSS_SEC_CG', #Climate governance
-    'LEV3_CARBONTAX_I', # Carbon Tax Industry
-    'LEV4_BAN_EXTRAC_DATE', # Bans on Fossil Fuel Extraction (with date)
-    'LEV4_FIT_SOL_PR', # Feed-in Tariffs for Solar PV
-    'LEV4_RENEWABLE_EXP', # Planning Renewables Expansion
-    'LEV4_BAN_EXTRAC_DATE', # Bans on Fossil Fuel Extraction (with date)
-    'LEV4_BAN_COAL_STAT', # Ban on the construction of coal power plants - legal status
-]
+selected_oecd_policies = {
+    # Energy
+    'LEV3_ETS_E':           'ets_electricity',
+    'LEV3_CARBONTAX_E':     'carbon_tax_electricity',
+    'LEV3_BAN_PHOUT_COAL':  'coal_phaseout',
+    'LEV3_RENEWABLE_EXP':   'renewables_expansion',
+    'LEV4_FIT_SOL_PR':      'feed_in_tariff_solar',
+    # Industry
+    'LEV3_CARBONTAX_I':     'carbon_tax_industry',
+    'LEV3_ETS_I':           'ets_industry',
+    'LEV4_EE_MANDATE':      'energy_efficiency_mandate',
+    # Buildings
+    'LEV3_BC':              'building_energy_codes',
+    'LEV3_BAN_PHOUT_HEAT':  'fossil_heating_phaseout',
+    # Transport
+    'LEV3_CARBONTAX_T':     'carbon_tax_transport',
+    'LEV3_BAN_PHOUT_ICE':   'ice_vehicle_phaseout',
+    'LEV3_CONG_CHARG':      'congestion_charge',
+    # Cross-cutting
+    'LEV3_NZ':              'net_zero_target',
+    'LEV3_NDC':             'ndc',
+    'LEV2_CROSS_SEC_CG':    'climate_governance',
+    'LEV3_RDD_RES':         'rdd_renewables',
+    'LEV3_FFS_PRODUCER':    'fossil_fuel_subsidy_reform',
+    'LEV4_BAN_EXTRAC_STAT': 'fossil_extraction_ban',
+}
 
 
 wb_indicators = {

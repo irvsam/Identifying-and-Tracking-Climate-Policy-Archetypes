@@ -71,7 +71,7 @@ Archetype 3:
   Countries: Argentina, China, Colombia, Indonesia, India, Mexico, Peru, Turkey, South Africa
 
   still haven't quite figured out which scalar to use. need to automate the process of scaling and performing kmeans so that i can test it out with different things. doing that now.
-  with the new data the k=2 seems to be the best choice
+  with the new data the k=2 seems to be the best choice 
 
   but for comparison im using k=4 
 
