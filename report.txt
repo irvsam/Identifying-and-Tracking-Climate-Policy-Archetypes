@@ -420,3 +420,19 @@ two different datasets to work with and some of the notebooks still use the old 
 that uses the right datasets and allows me to conduct experiments to compare etc etc
 
 Now have a really nice consolidated notebook to conduct my tests
+
+Day 17: May 07
+
+I added a section to the consolidated notebook about comparing the clusters on a map and comparing those with economic indicators to those twithout. nice to test the different methods and then include certain indicators. could be nice to begin increasing this with
+the option to choose which indicators to include from capmf... would also be good to use a less biased dataset in the future but for now i tihnk it is a good start.
+
+today I want to focus on really learning the basics. I feel like ive worked a lot on getting a very good experimebt and its working really well and i think ive learnt a lot. now i want to go nack and see if i can really grasp the core concepts and implement this stuff 
+on my own with just what I remember.
+
+Day 18: May 13
+
+im still focusing on the basics. really understanding the algorithms I used
+
+Day 19: 14 May
+
+today I am dedicating to writing the report
