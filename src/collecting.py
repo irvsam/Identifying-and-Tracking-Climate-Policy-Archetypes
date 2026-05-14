@@ -1,3 +1,4 @@
+from matplotlib.style import available
 import pandas as pd
 import wbgapi as wb
 import os
@@ -85,7 +86,7 @@ class ClimateDataFactory:
         
         # 3. Clean & Fill
         merged = merged[merged['year'] <= 2021]
-        policy_cols = [col for col in merged.columns if col.startswith('LEV')]
+        policy_cols = list(selected_oecd_policies.values())
         merged[policy_cols] = merged[policy_cols].fillna(0)
 
         # 4. Create the "Snapshot" (Temporal Averaging)

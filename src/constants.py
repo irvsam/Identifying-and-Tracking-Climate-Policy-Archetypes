@@ -1,9 +1,9 @@
 countries = [
-    'ARG', 'AUS', 'AUT', 'BEL', 'BRA', 'CAN', 'CHL', 'CHN', 'COL', 'CRC', 
+    'ARG', 'AUS', 'AUT', 'BEL', 'CAN', 'CHL', 'CHN', 'COL', 'CRC', 
     'CZE', 'DEU', 'DNK', 'ESP', 'EST', 'FIN', 'FRA', 'GBR', 'GRC', 'HUN', 
     'IDN', 'IND', 'IRL', 'ISL', 'ISR', 'ITA', 'JPN', 'KOR', 'LTU', 'LUX', 
-    'LVA', 'MEX', 'NOR', 'NZL', 'PER', 'PHL', 'POL', 'PRT', 'RUS', 'SAU', 
-    'SVK', 'SVN', 'SWE', 'TUR', 'USA', 'ZAF', 'CHE', 'NLD', 'SGP', 'VNM'
+    'LVA', 'MEX', 'NOR', 'NZL', 'PER', 'POL', 'PRT', 'RUS', 'SAU', 
+    'SVK', 'SVN', 'SWE', 'TUR', 'ZAF', 'CHE', 'NLD', 'HRV', 'BGR', 'ROU',
 ]
 
 years = list(range(2000, 2021))
