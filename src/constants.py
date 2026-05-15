@@ -1,38 +1,26 @@
 countries = [
-    'ARG', 'AUS', 'AUT', 'BEL', 'CAN', 'CHL', 'CHN', 'COL', 'CRC', 
+    'ARG', 'AUS', 'AUT', 'BEL', 'BRA', 'CAN', 'CHL', 'CHN', 'COL', 'CRC', 
     'CZE', 'DEU', 'DNK', 'ESP', 'EST', 'FIN', 'FRA', 'GBR', 'GRC', 'HUN', 
     'IDN', 'IND', 'IRL', 'ISL', 'ISR', 'ITA', 'JPN', 'KOR', 'LTU', 'LUX', 
-    'LVA', 'MEX', 'NOR', 'NZL', 'PER', 'POL', 'PRT', 'RUS', 'SAU', 
-    'SVK', 'SVN', 'SWE', 'TUR', 'ZAF', 'CHE', 'NLD', 'HRV', 'BGR', 'ROU',
+    'LVA', 'MEX', 'NOR', 'NZL', 'PER', 'PHL', 'POL', 'PRT', 'RUS', 'SAU', 
+    'SVK', 'SVN', 'SWE', 'TUR', 'USA', 'ZAF', 'CHE', 'NLD', 'SGP', 'VNM'
 ]
 
 years = list(range(2000, 2021))
 
 selected_oecd_policies = {
-    # Energy
-    'LEV3_ETS_E':           'ets_electricity',
-    'LEV3_CARBONTAX_E':     'carbon_tax_electricity',
+    'LEV4_CARBONTAX_T':     'carbon_tax_transport',
     'LEV3_BAN_PHOUT_COAL':  'coal_phaseout',
-    'LEV3_RENEWABLE_EXP':   'renewables_expansion',
-    'LEV4_FIT_SOL_PR':      'feed_in_tariff_solar',
-    # Industry
-    'LEV3_CARBONTAX_I':     'carbon_tax_industry',
-    'LEV3_ETS_I':           'ets_industry',
     'LEV4_EE_MANDATE':      'energy_efficiency_mandate',
-    # Buildings
-    'LEV3_BC':              'building_energy_codes',
-    'LEV3_BAN_PHOUT_HEAT':  'fossil_heating_phaseout',
-    # Transport
-    'LEV3_CARBONTAX_T':     'carbon_tax_transport',
-    'LEV3_BAN_PHOUT_ICE':   'ice_vehicle_phaseout',
-    'LEV3_CONG_CHARG':      'congestion_charge',
-    # Cross-cutting
+    'LEV4_ETS_E_GHG':       'ets_electricity',
+    'LEV4_CONG_CHARG':      'congestion_charge',
     'LEV3_NZ':              'net_zero_target',
-    'LEV3_NDC':             'ndc',
     'LEV2_CROSS_SEC_CG':    'climate_governance',
-    'LEV3_RDD_RES':         'rdd_renewables',
-    'LEV3_FFS_PRODUCER':    'fossil_fuel_subsidy_reform',
+    'LEV3_CARBONTAX_I':     'carbon_tax_industry',
     'LEV4_BAN_EXTRAC_STAT': 'fossil_extraction_ban',
+    'LEV4_FIT_SOL_PR':      'feed_in_tariff_solar',
+    'LEV4_RENEWABLE_EXP':   'renewables_expansion',
+    'LEV4_BAN_COAL_STAT':   'coal_ban_status',
 }
 
 
