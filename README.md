@@ -1,7 +1,7 @@
 # Identifying and Tracking Climate Policy Archetypes
 **A Cluster-Based Assessment of Climate Action Across 49 Countries (2000–2020)**
 
-An unsupervised machine learning project that identifies and tracks global climate policy archetypes using K-Means, Hierarchical Clustering, DBSCAN, and a PyTorch Autoencoder.
+An unsupervised machine learning project that identifies and tracks global climate policy archetypes using K-Means, Hierarchical Clustering, DBSCAN and a PyTorch Autoencoder.
 
 ## Interactive Outputs
 - [Climate Policy Archetypes — World Map](https://irvsam.github.io/Identifying-and-Tracking-Climate-Policy-Archetypes/notebooks/outputs/map_autoencoder_full.html)
@@ -25,7 +25,7 @@ The final datasets used in the experiment are:
 - `data/processed/temporal_cleaned_feature_matrix.csv`
 
 ### `notebooks/` — Experiments
-The main experiment is in [`final_consolidated_archetype_testing.ipynb`](notebooks/final_consolidated_archetype_testing.ipynb)`. It runs the following in sequence:
+The main experiment is in [`final_consolidated_archetype_testing.ipynb`](notebooks/final_consolidated_archetype_testing.ipynb). It runs the following in sequence:
 
 1. **Snapshot Clustering** — K-Means (with elbow and silhouette plots to choose k), Hierarchical (Ward linkage with dendrogram), and DBSCAN (with k-distance plot to choose eps); includes a cluster fingerprint heatmap and a stability check (co-occurrence matrix over 50 runs)
 2. **Autoencoder + K-Means** — PyTorch autoencoder (input → 16 → 8 → 3 → 8 → 16 → input) compressing the averaged data to a 3D latent space, then K-Means on that representation; includes a PCA scatter plot, cluster fingerprint heatmap, and a counterfactual test where a real country's features are tweaked to see if it moves cluster
