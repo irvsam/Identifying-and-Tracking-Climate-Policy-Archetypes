@@ -12,7 +12,7 @@ An unsupervised machine learning project that identifies and tracks global clima
 ## How This Repo Works
 
 ### `src/` — Data Pipeline Scripts
-Run these first to generate the processed datasets before opening the notebook.
+These are the setup scripts for creating the feature matrix. No need to re run them as the final datasets are version controlled and available in [data/processed](data/processed)
 
 - **`collecting.py`** — Fetches raw data from the World Bank API, OECD CAPMF API, and a local ND-GAIN CSV. Merges everything into country-year pairs, fills missing policy values with 0, and outputs two CSVs: a long-format temporal dataset and an averaged snapshot per country.
 - **`cleaning.py`** — Clips negative values in percentage columns, log-transforms GDP per capita and energy use per capita, then drops the original raw versions of those columns. Applies PowerTransformer (Yeo-Johnson) scaling separately to the averaged and temporal datasets.
@@ -21,7 +21,7 @@ Run these first to generate the processed datasets before opening the notebook.
 - **`constants.py`** — Country list (50 countries), year range (2000–2020), World Bank indicator codes, and selected OECD policy IDs with human-readable names.
 
 ### `notebooks/` — Experiments
-The main experiment is in `final_consolidated_archetype_testing.ipynb`. It runs the following in sequence:
+The main experiment is in [`final_consolidated_archetype_testing.ipynb](notebooks/final_consolidated_archetype_testing.ipynb)`. It runs the following in sequence:
 
 1. **Snapshot Clustering** — K-Means (with elbow and silhouette plots to choose k), Hierarchical (Ward linkage with dendrogram), and DBSCAN (with k-distance plot to choose eps); includes a cluster fingerprint heatmap and a stability check (co-occurrence matrix over 50 runs)
 2. **Autoencoder + K-Means** — PyTorch autoencoder (input → 16 → 8 → 3 → 8 → 16 → input) compressing the averaged data to a 3D latent space, then K-Means on that representation; includes a PCA scatter plot, cluster fingerprint heatmap, and a counterfactual test where a real country's features are tweaked to see if it moves cluster
@@ -32,7 +32,7 @@ The main experiment is in `final_consolidated_archetype_testing.ipynb`. It runs 
 The other notebooks in the folder contain earlier iterative experiments that accumulated into the consolidated file.
 
 ### Daily Logs
-`logbook.txt` traces how the project evolved — worth a read to see the full thought process.
+[`logbook.txt`](logbook.txt) traces how the project evolved - worth a read to see the full thought process.
 
 ## Data Sources
 
