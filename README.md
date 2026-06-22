@@ -12,13 +12,17 @@ An unsupervised machine learning project that identifies and tracks global clima
 ## How This Repo Works
 
 ### `src/` — Data Pipeline Scripts
-These are the setup scripts for creating the feature matrix. No need to re run them as the final datasets are version controlled and available in [data/processed](data/processed)
+These are the setup scripts for creating the final feature matrix. No need to re run them as the final datasets are version controlled and available in [data/processed](data/processed)
 
 - **`collecting.py`** — Fetches raw data from the World Bank API, OECD CAPMF API, and a local ND-GAIN CSV. Merges everything into country-year pairs, fills missing policy values with 0, and outputs two CSVs: a long-format temporal dataset and an averaged snapshot per country.
 - **`cleaning.py`** — Clips negative values in percentage columns, log-transforms GDP per capita and energy use per capita, then drops the original raw versions of those columns. Applies PowerTransformer (Yeo-Johnson) scaling separately to the averaged and temporal datasets.
 - **`preprocessing.py`** — Standalone helper that applies either PowerTransformer or StandardScaler to a dataset and saves the result. Used for earlier experiments.
 - **`data_loader.py`** — Helper functions for fetching World Bank, OECD, and EDGAR data, used by `collecting.py`.
 - **`constants.py`** — Country list (50 countries), year range (2000–2020), World Bank indicator codes, and selected OECD policy IDs with human-readable names.
+
+The final datasets used in the experiment are:
+- `data/processed/avg_cleaned_feature_matrix.csv`
+- `data/processed/temporal_cleaned_feature_matrix.csv`
 
 ### `notebooks/` — Experiments
 The main experiment is in [`final_consolidated_archetype_testing.ipynb](notebooks/final_consolidated_archetype_testing.ipynb)`. It runs the following in sequence:
