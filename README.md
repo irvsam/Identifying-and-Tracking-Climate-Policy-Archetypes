@@ -30,5 +30,5 @@ An unsupervised machine learning project that identifies and tracks global clima
   Daily logs are kept in logbook.txt and are a good read to see how the project evolved over time. 
 
   ## Main Experiment
-  The main final consolidated experiment lives in [text](notebooks/final_consolidated_archetype_testing.ipynb)
+  The main final consolidated experiment lives in [this final notebook](notebooks/final_consolidated_archetype_testing.ipynb)
   The rest of the notebooks contain iterative experiments that evolved over time and accumulated into the consolidated file.
