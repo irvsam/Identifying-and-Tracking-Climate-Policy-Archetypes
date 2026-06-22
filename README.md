@@ -9,7 +9,7 @@ An unsupervised machine learning project that identifies and tracks global clima
 - [AE Latent Space (3D)](https://irvsam.github.io/Identifying-and-Tracking-Climate-Policy-Archetypes/notebooks/outputs/ae_latent_3d.html)
 - [Temporal Trajectories (3D)](https://irvsam.github.io/Identifying-and-Tracking-Climate-Policy-Archetypes/notebooks/outputs/trajectories_3d.html)
 
-## Data Sources and Acknowledgements
+## Data Sources 
 
 * **World Bank Development Indicators (WDI)**
   * **Citation**: World Bank (2026), World Development Indicators.
@@ -25,3 +25,10 @@ An unsupervised machine learning project that identifies and tracks global clima
   * **Citation**: Notre Dame Global Adaptation Initiative (2025).
   * **License**: Creative Commons Attribution 4.0 International (CC BY 4.0).
   * **Access**: [gain.nd.edu](https://gain.nd.edu/our-work/country-index/)
+
+  ## Daily logs
+  Daily logs are kept in logbook.txt and are a good read to see how the project evolved over time. 
+
+  ## Main Experiment
+  The main final consolidated experiment lives in [text](notebooks/final_consolidated_archetype_testing.ipynb)
+  The rest of the notebooks contain iterative experiments that evolved over time and accumulated into the consolidated file.
